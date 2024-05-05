@@ -2,16 +2,189 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'Lazydog';
+  src: local('Lazydog'), url(./assets/fonts/Lazydog.ttf) format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  @apply font-sans;
+}
+
+div.hero-banner {
+  @apply flex max-lg:flex-wrap items-center justify-between gap-10 bg-blue-dark pl-14 pr-8 max-lg:pt-16 max-lg:pb-4 min-h-[580px];
+}
+
+button.btn--small {
+  @apply w-fit h-fit px-7 py-2.5 rounded-lg px-2.5 py-1.5 bg-blue-dark h-fit rounded-full text-white text-sm;
+}
+
+button.btn--blue-primary {
+  @apply w-fit h-fit px-7 py-2.5 rounded-lg font-medium text-white bg-blue-dark hover:bg-blue-light;
+}
+
+button.btn--blue-secondary {
+  @apply w-fit h-fit px-7 py-2.5 rounded-lg font-medium border-blue-dark border-2 hover:bg-blue-dark hover:text-white;
+}
+
+button.btn--pink-primary {
+  @apply w-fit h-fit px-8 py-2.5 text-lg rounded-lg bg-pink-light text-red font-bold hover:bg-pink-dark;
+}
+
+.btn-testimonial {
+  @apply w-full max-w-[900px] text-blue-dark border-4 border-blue-dark rounded-xl font-bold text-2xl text-center py-3 opacity-70 hover:opacity-100;
+}
+
+.btn-testimonial--select {
+  @apply w-full flex justify-between items-center cursor-pointer bg-blue-dark text-pink-light border-4 border-blue-dark rounded-xl font-bold text-3xl py-4 px-6;
+}
+
+input.input-field {
+  @apply border-2 border-[#00000059] rounded-lg w-80 py-2 px-4 hover:border-blue-dark focus:border-blue-dark focus:outline-none;
+}
+
+textarea.textarea-field {
+  @apply text-lg resize-none h-60 xl:w-10/12 border-4 border-blue-dark rounded-xl rounded-xl py-4 px-5 w-full focus:outline-none;
+}
+
+textarea.textarea-field::placeholder {
+  @apply text-[#3C6CA899] font-bold text-2xl relative top-[40%] text-center;
+}
+
+nav.navbar {
+  @apply flex flex-row items-center justify-between gap-x-10 py-1 px-10;
+}
+
+nav.navbar .navbar-nav {
+  @apply flex items-center justify-center gap-x-16;
+}
+
+nav li.nav-item .nav-link {
+  @apply relative flex items-center justify-center font-medium hover:text-blue-dark;
+}
+
+nav li.nav-item .active {
+  @apply font-bold text-blue-dark;
+}
+
+nav li.nav-item .active:after {
+  @apply content-[''] bottom-[-6px] absolute w-10 border-b-4 border-blue-dark rounded-full;
+}
+
+footer .menu-item {
+  @apply font-semibold text-white;
+}
+
+footer a.menu-item {
+  @apply hover:text-pink-light;
+}
+
+div.new-product-card {
+  @apply transition ease-in-out hover:scale-105 duration-300 text-center;
+}
+
+.new-product-card .card-image {
+  @apply h-80 w-56 border-[6px] border-pink-light rounded-2xl object-cover;
+}
+
+.new-product-card .card-text {
+  @apply mt-4 text-blue-dark text-xl font-semibold;
+}
+
+div.product-card {
+  @apply relative bg-white w-72 h-96 transition ease-in-out hover:scale-105 duration-300;
+}
+
+.product-card .card-image {
+  @apply rounded-xl border-[6px] border-pink-light pb-5 w-full h-96 object-cover;
+}
+
+.product-card .card-title {
+  @apply absolute py-4 px-5 bottom-0 bg-pink-light rounded-2xl w-full;
+}
+
+div.category-card {
+  @apply relative transition ease-in-out hover:scale-105 duration-300;
+}
+
+.category-card .card-image {
+  @apply w-[460px] h-72 object-cover rounded-xl border-8 border-pink-light;
+}
+
+.category-card .card-title {
+  @apply absolute py-3 bottom-0 bg-pink-light rounded-2xl w-full;
+}
+
+.product-card .card-title .card-text,
+.category-card .card-title .card-text {
+  @apply text-blue-dark text-2xl font-bold text-center;
+}
+
+div.testimonial-card {
+  @apply grid grid-cols-8;
+}
+
+.testimonial-card .card-image {
+  @apply flex items-center max-w-40 border-4 border-r-[2.5px] border-pink-light rounded-xl p-2;
+}
+
+.testimonial-card .card-content {
+  @apply col-span-7 border-4 border-l-[2.5px] grow border-pink-light rounded-xl py-4 px-5;
+}
+
+.testimonial-card .card-content .content-title {
+  @apply flex justify-between items-center mb-3;
+}
+
+.testimonial-card .card-content .content-description {
+  @apply text-lg text-blue-dark font-medium leading-relaxed;
+}
+
+div.product-title {
+  @apply w-full max-w-[900px] bg-blue-dark py-4 rounded-xl;
+}
+
+div.dropdown-menu {
+  @apply max-w-80 absolute right-0 z-10;
+}
+
+.dropdown-menu .menu-title {
+  @apply p-1.5 bg-pink-light text-center font-bold text-lg text-blue-dark;
+}
+
+.dropdown-menu button.menu-item {
+  @apply w-full py-1.5 px-6 text-left bg-blue-dark font-semibold text-lg text-white hover:bg-purple-dark;
+}
+
+/* Carousel */
+.carousel {
+  @apply flex gap-x-4 2xl:h-[500px] max-2xl:my-9 max-2xl:pb-10;
+}
+
+.carousel .carousel-card-item {
+  @apply max-w-[450px] max-h-[450px] mr-4;
+}
+
+.carousel .carousel-card-item .carousel-card-body {
+  @apply px-10 py-4 absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center gap-6;
+}
+
+.react-multi-carousel-dot.react-multi-carousel-dot--active button {
+  @apply bg-red !border-red border-2 w-4 h-4;
+}
+
+.react-multi-carousel-dot button {
+  @apply !border-2 !border-pink-light !w-4 !h-4;
+}
+
+.react-multiple-carousel__arrow {
+  @apply !bg-blue-dark;
+}
+
+.react-multiple-carousel__arrow--left {
+  @apply !left-2.5;
+}
+
+.react-multiple-carousel__arrow--right {
+  @apply !right-2.5;
 }

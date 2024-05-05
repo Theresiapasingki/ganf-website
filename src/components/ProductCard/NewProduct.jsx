@@ -1,15 +1,18 @@
-import React from "react";
+import { Link } from 'react-router-dom';
 
 const NewProduct = (props) => {
+  // Changing product name to lowercase and replacing space with dash
+  var name = props.image.name.toLowerCase().replace(/ /g, '-');
+  // Path for each product containing id and name
+  var path = `/products/clothes/${props.image.id}/${name}`;
+
   return (
-    <>
-      <div className="flex flex-row gap-4 w-64 h-96 border-solid border-[#FDC5CC] rounded-xl">
-        <div className="flex flex-col items-center text-[#3C6CA8] text-xl font-semibold">
-          <img src={props.src} alt="" className="h-full"/>
-          <p>White Series - Coconut</p>
-        </div>
-      </div>
-    </>
+    <div className="new-product-card">
+      <Link to={path}>
+        <img src={props.image.src} alt="New Product" className="card-image" />
+        <p className="card-text">{props.image.title}</p>
+      </Link>
+    </div>
   );
 };
 
