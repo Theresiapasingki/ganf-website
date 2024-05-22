@@ -5,11 +5,19 @@ const Hero = () => {
   let navigate = useNavigate();
   const goToProductPage = () => navigate('/products');
 
+  const scrollToPromotions = () => {
+    document.getElementById('promotions').scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div>
       <div className="py-2 flex flex-row items-center gap-4 bg-pink-light justify-center">
         <p className="font-medium">Today's offer!</p>
-        <button className="btn--small">SEE HERE</button>
+        <button className="btn--small" onClick={scrollToPromotions}>
+          SEE HERE
+        </button>
       </div>
       <div className="hero-banner">
         <div className="flex flex-col gap-y-4">

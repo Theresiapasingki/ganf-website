@@ -1,9 +1,10 @@
-import { productCategories } from '../../constants';
 import { arrowDown } from '../../assets';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CategoryContext } from '../../contexts/CategoryContext';
 
-const DropdownProduct = () => {
+const DropdownProduct = ({ onProductChange }) => {
   const [product, setProduct] = useState('Which Product?');
+  const { categories } = useContext(CategoryContext);
 
   const handleSelectProduct = () => {
     const dropdown = document.querySelector('.dropdown-menu');
@@ -14,7 +15,9 @@ const DropdownProduct = () => {
   };
 
   const handleSelectProductItem = (product) => {
-    setProduct(product);
+    setProduct(product.name);
+    onProductChange(product);
+
     const dropdown = document.querySelector('.dropdown-menu');
     dropdown.classList.add('hidden');
   };
@@ -35,14 +38,14 @@ const DropdownProduct = () => {
       </button>
 
       <div className="dropdown-menu hidden">
-        {productCategories.map((category) => (
-          <div key={category.id}>
-            <div className="menu-title">{category.name}</div>
+        {categories.map((category) => (
+          <div key={category.slug}>
+            <div className="menu-title">{category.type}</div>
             {category.products.map((product) => (
               <button
                 key={product.id}
                 className="menu-item"
-                onClick={() => handleSelectProductItem(product.name)}
+                onClick={() => handleSelectProductItem(product)}
                 type="button"
               >
                 {product.name}

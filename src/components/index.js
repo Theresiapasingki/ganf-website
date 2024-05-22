@@ -1,27 +1,27 @@
 import Hero from './Hero/Hero';
 import Banner from './Banner/Banner';
-import Navbar from './NavigationBar/NavigationBar';
+import NavigationBar from './NavigationBar/NavigationBar';
 import NewProduct from './ProductCard/NewProduct';
-import ProductCategory from './ProductCard/ProductCategory';
-import ClothingCard from './ProductCard/ClothingCard';
-import FoodBeverageCard from './ProductCard/FoodBeverageCard';
+import CategoryCard from './ProductCard/CategoryCard';
+import ProductCard from './ProductCard/ProductCard';
 import DropdownProduct from './DropdownProduct/DropdownProduct';
 import TestimonialCard from './TestimonialCard/TestimonialCard';
 import TestimonialCarousel from './TestimonialCarousel/TestimonialCarousel';
 import TestimonialCarouselItem from './TestimonialCarousel/TestimonialCarouselItem';
 import Footer from './Footer/Footer';
+import Loading from './Loading/Loading';
 
 export {
   Hero,
   Banner,
-  Navbar,
+  NavigationBar,
   NewProduct,
-  ProductCategory,
-  ClothingCard,
-  FoodBeverageCard,
+  CategoryCard,
+  ProductCard,
   DropdownProduct,
   TestimonialCard,
   TestimonialCarousel,
   TestimonialCarouselItem,
   Footer,
+  Loading,
 };

@@ -1,14 +1,14 @@
 import { arrowBack, logo } from '../../assets';
 import { useNavigate } from 'react-router-dom';
 
-const Banner = (props) => {
+const Banner = ({ previousPage, showBackButton }) => {
   let navigate = useNavigate();
-  const goToPreviousPage = () => navigate(props.previousPage);
+  const goToPreviousPage = () => navigate(previousPage);
 
   return (
     <div>
       <div className="flex items-center bg-blue-dark px-14">
-        {props.showBackButton && (
+        {showBackButton && (
           <button onClick={goToPreviousPage} className="flex">
             <img src={arrowBack} alt="Icon Back" className="w-12" />
           </button>

@@ -56,6 +56,8 @@ import arrowUp from './icons/arrow_up.svg';
 import arrowDown from './icons/arrow_down.svg';
 import backgroundReview from './images/background_review.png';
 import iconProductCategory from './images/icon_product_group.png';
+import loading from './icons/loading.svg';
+import loadingWhite from './icons/loading-white.svg';
 
 export {
   logo,
@@ -109,4 +111,6 @@ export {
   reviewCincau,
   backgroundReview,
   iconProductCategory,
+  loading,
+  loadingWhite,
 };

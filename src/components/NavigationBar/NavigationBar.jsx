@@ -1,9 +1,9 @@
 import { logo } from '../../assets';
-import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const Navbar = () => {
-  const navigate = useNavigate();
-  const goToLogin = () => navigate('/login');
+const NavigationBar = () => {
+  const goToLogin = () =>
+    (window.location = 'https://admin-ganf-website.vercel.app/login');
 
   const { pathname } = useLocation();
   const isLinkActive = (path) =>
@@ -50,4 +50,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavigationBar;

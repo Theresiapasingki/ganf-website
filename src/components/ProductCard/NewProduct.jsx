@@ -1,16 +1,21 @@
 import { Link } from 'react-router-dom';
 
-const NewProduct = (props) => {
-  // Changing product name to lowercase and replacing space with dash
-  var name = props.image.name.toLowerCase().replace(/ /g, '-');
-  // Path for each product containing id and name
-  var path = `/products/clothes/${props.image.id}/${name}`;
+const NewProduct = ({ product }) => {
+  const category =
+    product.category === 'Food' || product.category === 'Drink'
+      ? 'fnb'
+      : product.category.toLowerCase();
+
+  const path = `/products/${category}/${product.id}`;
 
   return (
     <div className="new-product-card">
       <Link to={path}>
-        <img src={props.image.src} alt="New Product" className="card-image" />
-        <p className="card-text">{props.image.title}</p>
+        <img src={product.photo} alt="New Product" className="card-image" />
+        <p className="card-text">
+          {product.series && `${product.series} - `}
+          {product.name}
+        </p>
       </Link>
     </div>
   );

@@ -1,11 +1,11 @@
-import { Navbar, Footer, Banner } from '../../components';
+import { NavigationBar, Footer, Banner } from '../../components';
 import { logoEllipse, femaleIcon, maleIcon } from '../../assets';
 
 const AboutUs = () => {
   return (
     <div>
       <header>
-        <Navbar />
+        <NavigationBar />
         <Banner />
       </header>
 

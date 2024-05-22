@@ -1,6 +1,15 @@
 import { backgroundReview, starFill, starEmpty } from '../../assets';
 
-const TestimonialCarouselItem = (props) => {
+const TestimonialCarouselItem = ({ testimonial }) => {
+  const formattedDate = new Date(testimonial.createdAt).toLocaleDateString(
+    'en-US',
+    {
+      month: 'short',
+      day: '2-digit',
+      year: 'numeric',
+    }
+  );
+
   return (
     <div className="carousel-card-item">
       <div className="relative">
@@ -10,19 +19,17 @@ const TestimonialCarouselItem = (props) => {
             {Array.from({ length: 5 }).map((_, index) => (
               <img
                 key={index}
-                src={index < props.testimonial.rating ? starFill : starEmpty}
+                src={index < testimonial.rating ? starFill : starEmpty}
                 alt="Star"
                 className="w-5"
               />
             ))}
-            <p className="font-bold ml-2">{props.testimonial.rating}/5</p>
+            <p className="font-bold ml-2">{testimonial.rating}/5</p>
           </div>
-          <p className="font-medium text-center">
-            {props.testimonial.description}
-          </p>
+          <p className="font-medium text-center">{testimonial.review}</p>
           <div className="text-center text-sm">
-            <p>{props.testimonial.reviewer}</p>
-            <p className="italic mt-1">{props.testimonial.date}</p>
+            <p>{testimonial.customerName}</p>
+            <p className="italic mt-1">{formattedDate}</p>
           </div>
         </div>
       </div>

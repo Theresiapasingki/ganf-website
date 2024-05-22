@@ -1,19 +1,15 @@
 import { Link } from 'react-router-dom';
 
-const ClothingCard = (props) => {
-  var name = props.product.name.toLowerCase().replace(/ /g, '-');
-  var path = `/products/clothes/${props.product.id}/${name}`;
+const ClothingCard = ({ product }) => {
+  var name = product.name.toLowerCase().replace(/ /g, '-');
+  var path = `/products/clothes/${product.id}/${name}`;
 
   return (
     <div className="product-card">
-      <Link to={path} preventScrollReset={true}>
-        <img
-          src={props.product.src}
-          alt={props.product.name}
-          className="card-image"
-        />
+      <Link to={path}>
+        <img src={product.src} alt={product.name} className="card-image" />
         <div className="card-title">
-          <p className="card-text">{props.product.name}</p>
+          <p className="card-text">{product.name}</p>
         </div>
       </Link>
     </div>
