@@ -164,6 +164,22 @@ div.product-detail {
   @apply text-blue-dark font-semibold text-justify text-xl;
 }
 
+.product-detail .product-description p {
+  @apply leading-relaxed;
+}
+
+.product-detail .product-description ul {
+  @apply list-disc ml-5;
+}
+
+.product-detail .product-description ol {
+  @apply list-decimal ml-5;
+}
+
+.product-detail .product-description li {
+  @apply mb-1;
+}
+
 .image-variant {
   @apply w-48 h-48 object-cover hover:border-pink-light hover:border-2;
 }

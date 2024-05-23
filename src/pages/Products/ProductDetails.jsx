@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { variantData } from '../../constants';
 import axiosInstance from '../../utils/axiosInstance';
+import DOMPurify from 'dompurify';
 
 const ProductDetails = () => {
   const { category, id } = useParams();
@@ -17,6 +18,8 @@ const ProductDetails = () => {
   });
   const [variantImages, setVariantImages] = useState([]);
   const [currentImage, setCurrentImage] = useState('');
+
+  const sanitizedDescription = DOMPurify.sanitize(product.description);
 
   const changeImage = (image) => setCurrentImage(image);
   const previousPage = category ? `/products/${category}` : '/products';
@@ -78,7 +81,12 @@ const ProductDetails = () => {
                 className="product-image"
               />
               <div className="w-full max-w-[700px]">
-                <p className="product-description">{product.description}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizedDescription,
+                  }}
+                  className="product-description"
+                />
               </div>
             </div>
 
