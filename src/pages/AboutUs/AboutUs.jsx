@@ -42,13 +42,13 @@ const AboutUs = () => {
             Owner GANF
           </h2>
           <div className="flex gap-x-36">
-            <div className="text-center">
+            <div className="flex flex-col items-center">
               <img src={maleIcon} alt="Owner GANF 1" className="w-44" />
-              <p className="text-2xl mt-7">Owner 1</p>
+              <p className="text-2xl mt-7">Muhammad Gazali Ardhi</p>
             </div>
-            <div className="text-center">
+            <div className="flex flex-col items-center">
               <img src={femaleIcon} alt="Owner GANF 2" className="w-44" />
-              <p className="text-2xl mt-7">Owner 2</p>
+              <p className="text-2xl mt-7">Nur Ainun Fitriani Achmad </p>
             </div>
           </div>
         </section>
@@ -68,7 +68,7 @@ const AboutUs = () => {
 
         <hr className="border-[#b2b2b2a1] border my-20" />
 
-        <section className="flex flex-col items-center mb-20">
+        <section className="flex flex-col items-center mb-24">
           <h2 className="text-[42px] font-bold mb-6 text-[#000000C9]">
             Tagline GANF
           </h2>

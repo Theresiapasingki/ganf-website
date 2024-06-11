@@ -1,4 +1,4 @@
-import { starFill, starEmpty } from '../../assets';
+import { starYellowEmpty, starYellowFill } from '../../assets';
 
 const TestimonialCard = ({ testimonial }) => {
   return (
@@ -15,7 +15,9 @@ const TestimonialCard = ({ testimonial }) => {
             {Array.from({ length: 5 }).map((_, index) => (
               <img
                 key={index}
-                src={index < testimonial.rating ? starFill : starEmpty}
+                src={
+                  index < testimonial.rating ? starYellowFill : starYellowEmpty
+                }
                 alt="Star"
                 className="object-cover"
               />

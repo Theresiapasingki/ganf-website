@@ -133,7 +133,7 @@ div.testimonial-card {
 }
 
 .testimonial-card .card-image {
-  @apply flex items-center max-w-40 max-h-40 border-4 border-r-[2.5px] border-pink-light rounded-xl p-2;
+  @apply flex items-center max-w-40 border-4 border-r-[2.5px] border-pink-light rounded-xl p-2;
 }
 
 .testimonial-card .card-content {

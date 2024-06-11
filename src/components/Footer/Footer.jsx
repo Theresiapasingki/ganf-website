@@ -14,7 +14,7 @@ const Footer = () => {
             HAPPINESS #1
           </p>
         </div>
-        <div className="grow flex justify-between gap-x-5 pr-5">
+        <div className="grow flex justify-between gap-x-5 pr-5 mt-2">
           <div className="flex flex-col gap-4">
             <a href="/products" className="menu-item">
               Our Product
@@ -33,11 +33,6 @@ const Footer = () => {
             <a href="/about-us" className="menu-item">
               About Us
             </a>
-            <a href="/about-us" className="menu-item">
-              About GANF
-            </a>
-          </div>
-          <div>
             <a href="/testimonials" className="menu-item">
               Testimoni
             </a>
@@ -49,6 +44,14 @@ const Footer = () => {
               Makassar, <br />
               Sulawesi Selatan
             </p>
+            <a
+              href="https://api.whatsapp.com/send/?phone=6281524062994"
+              className="menu-item"
+              target="_blank"
+              rel="noreferrer"
+            >
+              +62 815-2406-2994
+            </a>
           </div>
         </div>
       </div>

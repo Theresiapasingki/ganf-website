@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { variantData } from '../../constants';
 import axiosInstance from '../../utils/axiosInstance';
 import DOMPurify from 'dompurify';
+import { shoppingCart } from '../../assets';
 
 const ProductDetails = () => {
   const { category, id } = useParams();
@@ -15,6 +16,7 @@ const ProductDetails = () => {
     category: '',
     series: '',
     description: '',
+    url: '',
   });
   const [variantImages, setVariantImages] = useState([]);
   const [currentImage, setCurrentImage] = useState('');
@@ -36,6 +38,7 @@ const ProductDetails = () => {
           category: data.category,
           series: data.series || '',
           description: data.description,
+          url: data.url,
         });
         setCurrentImage(data.photo);
 
@@ -54,6 +57,10 @@ const ProductDetails = () => {
     fetchProduct();
   }, [id]);
 
+  const handleOrderNow = () => {
+    window.location = product.url || 'https://shopee.co.id/ganfcollection';
+  };
+
   return (
     <div>
       <header>
@@ -65,7 +72,7 @@ const ProductDetails = () => {
         {isLoading ? (
           <Loading />
         ) : (
-          <section className="flex flex-col items-center pb-24">
+          <section className="flex flex-col items-center">
             <div className="product-title">
               <h1 className="text-pink-light text-center text-3xl font-bold">
                 {product.series
@@ -107,6 +114,25 @@ const ProductDetails = () => {
                 ))}
               </div>
             )}
+
+            <div className="w-full border-t mt-24 pt-12 pb-4 flex gap-8 flex-col items-center">
+              <h2 className="text-2xl font-semibold">
+                {category === 'fnb'
+                  ? '🌟 Treat Yourself – Order Food or Beverages Today! 🌟'
+                  : '🔔 Limited Edition Styles – Grab Yours Now! 🔔'}
+              </h2>
+              <button
+                className="btn--pink-primary flex gap-4 items-center"
+                onClick={handleOrderNow}
+              >
+                <img
+                  src={shoppingCart}
+                  alt="Icon Shopping Cart"
+                  className="w-8"
+                />
+                Order Now
+              </button>
+            </div>
           </section>
         )}
       </main>

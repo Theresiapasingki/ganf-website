@@ -49,6 +49,8 @@ import shopee from './icons/shopee.svg';
 import tiktok from './icons/tiktok.svg';
 import starFill from './icons/star_fill.svg';
 import starEmpty from './icons/star_line.svg';
+import starYellowFill from './icons/star_yellow_fill.svg';
+import starYellowEmpty from './icons/star_yellow_line.svg';
 import starBlueFill from './icons/star_blue_fill.svg';
 import starBlueEmpty from './icons/star_blue_line.svg';
 import arrowBack from './icons/arrow_back.svg';
@@ -58,6 +60,7 @@ import backgroundReview from './images/background_review.png';
 import iconProductCategory from './images/icon_product_group.png';
 import loading from './icons/loading.svg';
 import loadingWhite from './icons/loading-white.svg';
+import shoppingCart from './icons/shopping_cart.svg';
 
 export {
   logo,
@@ -70,6 +73,8 @@ export {
   starEmpty,
   starBlueFill,
   starBlueEmpty,
+  starYellowFill,
+  starYellowEmpty,
   arrowUp,
   arrowDown,
   arrowBack,
@@ -113,4 +118,5 @@ export {
   iconProductCategory,
   loading,
   loadingWhite,
+  shoppingCart,
 };
